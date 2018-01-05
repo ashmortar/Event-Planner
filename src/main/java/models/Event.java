@@ -110,9 +110,16 @@ public class Event {
         int entertainmentIndex = Arrays.asList(entertainmentOptions).indexOf(entertainment);
         if (numberOfGuests == 0) {
             return false;
-        } else {
+        } else if (input.equals("DJSentMe")){
+            if (numberOfGuests >= 150 && !food.equals("none") && !drinks.equals("none") && entertainment.equals("DJ")) {
+                price = numberOfGuests * (foodPrices[foodIndex] + drinkPrices[drinkIndex]);
+            } else {
+                return false;
+            }
+        } else if (input.equals("30%Off")) {
+            price = ((numberOfGuests * (foodPrices[foodIndex] + drinkPrices[drinkIndex]) + entertainmentPrices[entertainmentIndex]) * 7) / 10;
+        } else
             price = numberOfGuests * (foodPrices[foodIndex] + drinkPrices[drinkIndex]) + entertainmentPrices[entertainmentIndex];
-        }
         return price;
     }
 }

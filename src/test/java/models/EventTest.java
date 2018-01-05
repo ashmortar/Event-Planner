@@ -161,13 +161,24 @@ public class EventTest {
     }
 
     @Test
-    public void couponCode_discountsCorrectlyForFreeDJ_4000() throws Exception {
+    public void couponCodeDJSentME_discountsCorrectlyForFreeDJ_6000() throws Exception {
         Event testEvent = new Event();
-        Integer expectedOutput = 4000;
-        testEvent.setNumberOfGuests(100);
+        Integer expectedOutput = 6000;
+        testEvent.setNumberOfGuests(150);
         testEvent.setFood("Dinner");
         testEvent.setDrinks("Full Bar");
         testEvent.setEntertainment("DJ");
         assertEquals(expectedOutput, testEvent.calculatePrice("DJSentMe"));
+    }
+
+    @Test
+    public void couponCode30PercentOff_discountsTotalPriceCorrectly_1820() throws Exception {
+        Event testEvent = new Event();
+        Integer expectedOutput = 1820;
+        testEvent.setNumberOfGuests(100);
+        testEvent.setFood("Brunch");
+        testEvent.setDrinks("Brunch Bar");
+        testEvent.setEntertainment("Magician");
+        assertEquals(expectedOutput, testEvent.calculatePrice("30%Off"));
     }
 }
