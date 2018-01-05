@@ -11,4 +11,11 @@ public class EventTest {
         Event testEvent = new Event();
         assertEquals(true, testEvent instanceof Event);
     }
+
+    @Test
+    public void getNumberOfGuests_returnsIntegerPropertyOfEvent_0() throws Exception {
+        Event testEvent = new Event();
+        Integer expectedOutput = 0;
+        assertEquals(expectedOutput, testEvent.getNumberOfGuests());
+    }
 }
