@@ -88,4 +88,25 @@ public class EventTest {
         String[] expectedOutput = {"Clown", "Magician", "Live Band", "DJ"};
         assertArrayEquals(expectedOutput, testEvent.getEntertainmentOptions());
     }
+
+    @Test
+    public void setFood_returnsErrorIfInputIsNotOnFoodOptionList_false() throws Exception {
+        Event testEvent = new Event();
+        Boolean expectedOutput = false;
+        assertEquals(expectedOutput, testEvent.setFood("yolo"));
+    }
+
+    @Test
+    public void setDrinks_returnsErrorIfInputIsNotOnDrinkOptionList_false() throws Exception {
+        Event testEvent = new Event();
+        Boolean expectedOuput = false;
+        assertEquals(expectedOuput, testEvent.setDrinks("yolo"));
+    }
+
+    @Test
+    public void setEntertainment_returnsErrorIfInputIsNotOnEntertainmentOptionsList_false() throws Exception {
+        Event testEvent = new Event();
+        Boolean expectedOutpu = false;
+        assertEquals(expectedOutpu, testEvent.setEntertainment("yolo"));
+    }
 }

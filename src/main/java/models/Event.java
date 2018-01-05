@@ -1,5 +1,8 @@
 package models;
 
+
+import java.util.Arrays;
+
 public class Event {
 
 
@@ -36,7 +39,7 @@ public class Event {
     }
 
     public String[] getEntertainmentOptions() {
-        return drinkOptions;
+        return entertainmentOptions;
     }
 
     //setter methods------------------------------------------------------------------------------
@@ -44,15 +47,23 @@ public class Event {
         numberOfGuests = input;
         return numberOfGuests;
     }
-    public String setFood(String input) {
-        food = input;
-        return food;
+    public Object setFood(String input) {
+        if (Arrays.asList(foodOptions).contains(input)) {
+            food = input;
+            return food;
+        } else {
+            return false;
+        }
     }
-    public String setDrinks(String input) {
-        drinks = input;
-        return drinks;
+    public Object setDrinks(String input) {
+        if (Arrays.asList(drinkOptions).contains(input)) {
+            drinks = input;
+            return drinks;
+        } else {
+            return false;
+        }
     }
-    public String setEntertainment(String input) {
+    public Object setEntertainment(String input) {
         entertainment = input;
         return entertainment;
     }
