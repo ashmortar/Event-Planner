@@ -22,6 +22,8 @@ public class Event {
     private Integer price = 0;
     private String[] couponCodes = {"DJSentMe", "30%Off"};
     private String[] couponCodeRequirements = {"at lease 150 people, buy food and drink", "no requirements! Just savings!"};
+    private String[] packages = {"Wedding Package", "Birthday Package", "Reunion Package"};
+    private String[] packageDetails = {"INCLUDES: Dinner, DJ and Beer and Wine for 75 people! COST: 2500 SAVINGS: 225", "INCLUDES: Cake, Juice and Soda plus our fabulous Clown for 15 people! COST: 200 SAVINGS: 75", "INCLUDES: Dinner, Full Bar and a Live Band for 100 people! COST: 3800 SAVINGS: 500!!"};
     //getter methods-------------------------------------------------------------------------
     public Integer getNumberOfGuests() {
         return numberOfGuests;
@@ -111,6 +113,14 @@ public class Event {
         } else {
             return false;
         }
+    }
+
+    public Object getPackages() {
+        List<String> packagesWithDetailsReturn = new ArrayList<String>();
+        for (Integer i = 0; i < packages.length; i++) {
+            packagesWithDetailsReturn.add(packages[i] + " " + packageDetails[i]);
+        }
+        return packagesWithDetailsReturn;
     }
 
     //Other Methods ------------------------------------------------------------------------------

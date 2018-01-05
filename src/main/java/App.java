@@ -20,7 +20,7 @@ public class App {
                 String userSelection = bufferedReader.readLine();
 
                 if (userSelection.equals("packages")) {
-                    //do a thing
+                    System.out.println(thisEvent.getPackages());
                 } else if (userSelection.equals("exit")){
                     System.out.println("Come again soon!");
                     isRunning = false;
@@ -42,7 +42,7 @@ public class App {
                 } else if (userSelection.equals("entertainment")) {
                     System.out.println(thisEvent.getEntertainmentPrices());
                 } else if (userSelection.equals("coupons")) {
-                    System.out.println(thisEvent.getCouponCodes());
+                    System.out.println(thisEvent.getCouponCodeWithRequirements());
                 }
                 else if (userSelection.equals("start")) {
                     System.out.println("Great! How many guests will attend your event?");

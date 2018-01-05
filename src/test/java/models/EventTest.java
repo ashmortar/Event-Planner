@@ -197,4 +197,14 @@ public class EventTest {
         expectedOutput.add("30%Off REQUIREMENTS: no requirements! Just savings!");
         assertEquals(expectedOutput, testEvent.getCouponCodeWithRequirements());
     }
+
+    @Test
+    public void getPackages_returnsPackagesAndTheirDescriptions_ArrayList() throws Exception {
+        Event testEvent = new Event();
+        List<String> expectedOutput = new ArrayList<String>();
+        expectedOutput.add("Wedding Package INCLUDES: Dinner, DJ and Beer and Wine for 75 people! COST: 2500 SAVINGS: 225");
+        expectedOutput.add("Birthday Package INCLUDES: Cake, Juice and Soda plus our fabulous Clown for 15 people! COST: 200 SAVINGS: 75");
+        expectedOutput.add("Reunion Package INCLUDES: Dinner, Full Bar and a Live Band for 100 people! COST: 3800 SAVINGS: 500!!");
+        assertEquals(expectedOutput, testEvent.getPackages());
+    }
 }
