@@ -114,7 +114,7 @@ public class EventTest {
     }
 
     @Test
-    public void getFoodPrices_returnsListOfFoodAndPriceOfFoodPerPerson_StringArray() throws Exception {
+    public void getFoodPrices_returnsListOfFoodAndPriceOfFoodPerPerson_ArrayList() throws Exception {
         Event testEvent = new Event();
         List<String> expectedOutput = new ArrayList<>();
         expectedOutput.add("Brunch: 15 per person");
@@ -124,5 +124,28 @@ public class EventTest {
         expectedOutput.add("Cake: 10 per person");
         expectedOutput.add("Light Snacks: 5 per person");
         assertEquals(expectedOutput, testEvent.getFoodPrices());
+    }
+
+    @Test
+    public void getDrinkPrices_returnsListOfDrinksAndPRiceOfFoodPerPerson_ArrayList() throws Exception {
+        Event testEvent = new Event();
+        List<String> expectedOutput = new ArrayList<>();
+        expectedOutput.add("Juice and Soda: 5 per person");
+        expectedOutput.add("Coffee and Tea: 5 per person");
+        expectedOutput.add("Brunch Bar: 10 per person");
+        expectedOutput.add("Beer and Wine: 10 per person");
+        expectedOutput.add("Full Bar: 15 per person");
+        assertEquals(expectedOutput, testEvent.getDrinkPrices());
+    }
+
+    @Test
+    public void getEntertainmentPrices_returnsListOfEntertainmentAndPrice_ArrayList() throws Exception {
+        Event testEvent = new Event();
+        List<String> expectedOutput = new ArrayList<>();
+        expectedOutput.add("Clown: 50");
+        expectedOutput.add("Magician: 100");
+        expectedOutput.add("Live Band: 300");
+        expectedOutput.add("DJ: 100");
+        assertEquals(expectedOutput, testEvent.getEntertainmentPrices());
     }
 }

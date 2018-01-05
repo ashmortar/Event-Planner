@@ -51,8 +51,20 @@ public class Event {
         return drinkOptions;
     }
 
+    public Object getDrinkPrices() {
+        List<String> drinkWithPriceReturn = new ArrayList<>();
+        for (Integer i = 0; i < drinkOptions.length; i++) {
+            drinkWithPriceReturn.add(drinkOptions[i] + ": " + drinkPrices[i] + " per person");
+        }
+        return drinkWithPriceReturn;
+    }
+
     public String[] getEntertainmentOptions() {
         return entertainmentOptions;
+    }
+
+    public Object getEntertainmentPrices() {
+        return false;
     }
 
     //setter methods------------------------------------------------------------------------------
