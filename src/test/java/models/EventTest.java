@@ -53,4 +53,11 @@ public class EventTest {
         String expectedOutput = "Dinner";
         assertEquals(expectedOutput, testEvent.setFood("Dinner"));
     }
+
+    @Test
+    public void setDrinks_changesDrinks_FullBar() throws Exception {
+        Event testEvent = new Event();
+        String expectedOutput = "Full Bar";
+        assertEquals(expectedOutput, testEvent.setDrinks("Full Bar"));
+    }
 }

@@ -28,6 +28,10 @@ public class Event {
     }
     public String setFood(String input) {
         food = input;
+        return food;
+    }
+    public String setDrinks(String input) {
+        drinks = input;
         return "failed test";
     }
 }
