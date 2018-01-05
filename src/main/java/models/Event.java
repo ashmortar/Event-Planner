@@ -20,7 +20,8 @@ public class Event {
     private String[] entertainmentOptions = {"Clown", "Magician", "Live Band", "DJ"};
     private Integer[] entertainmentPrices = {50, 100, 300, 100};
     private Integer price = 0;
-
+    private String[] couponCodes = {"DJSentMe", "30%Off"};
+    private String[] couponCodeRequirements = {"at lease 150 people, buy food and drink", "no requirements! Just savings!"};
     //getter methods-------------------------------------------------------------------------
     public Integer getNumberOfGuests() {
         return numberOfGuests;
@@ -72,6 +73,16 @@ public class Event {
         return entertainmentWithPriceReturn;
     }
 
+    public String[] getCouponCodes() {
+        return couponCodes;
+    }
+    public Object getCouponCodeWithRequirements() {
+        List<String> couponCodesWithRequirements = new ArrayList<String>();
+        for (Integer i = 0; i < couponCodes.length; i++) {
+            couponCodesWithRequirements.add(couponCodes[i] + " REQUIREMENTS: " + couponCodeRequirements[i]);
+        }
+        return couponCodesWithRequirements;
+    }
     //setter methods------------------------------------------------------------------------------
     public Integer setNumberOfGuests(Integer input) {
         numberOfGuests = input;

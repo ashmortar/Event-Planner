@@ -181,4 +181,20 @@ public class EventTest {
         testEvent.setEntertainment("Magician");
         assertEquals(expectedOutput, testEvent.calculatePrice("30%Off"));
     }
+
+    @Test
+    public void getCouponCodes_returnsStringArrayOfValidCouponCodes_StringArray() throws Exception {
+        Event testEvent = new Event();
+        String[] expectedOutput = {"DJSentMe", "30%Off"};
+        assertArrayEquals(expectedOutput, testEvent.getCouponCodes());
+    }
+
+    @Test
+    public void getCouponCodesWithRequirements_returnsArrayListOfCodesAndRequirements_ArrayList() throws Exception {
+        Event testEvent = new Event();
+        List<String> expectedOutput = new ArrayList<String>();
+        expectedOutput.add("DJSentMe REQUIREMENTS: at lease 150 people, buy food and drink");
+        expectedOutput.add("30%Off REQUIREMENTS: no requirements! Just savings!");
+        assertEquals(expectedOutput, testEvent.getCouponCodeWithRequirements());
+    }
 }
