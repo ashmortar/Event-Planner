@@ -3,6 +3,9 @@ package models;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+import java.util.List;
+import java.util.ArrayList;
+
 
 public class EventTest {
 
@@ -113,7 +116,13 @@ public class EventTest {
     @Test
     public void getFoodPrices_returnsListOfFoodAndPriceOfFoodPerPerson_StringArray() throws Exception {
         Event testEvent = new Event();
-        String[] expectedOutput = {"Brunch: 15 per person", "Lunch: 20 per person", "Dinner: 25 per person", "Dessert: 5 per person", "Cake: 10 per person", "Light Snacks: 5 per person"};
-        assertArrayEquals(expectedOutput, testEvent.getFoodPrices());
+        List<String> expectedOutput = new ArrayList<>();
+        expectedOutput.add("Brunch: 15 per person");
+        expectedOutput.add("Lunch: 20 per person");
+        expectedOutput.add("Dinner: 25 per person");
+        expectedOutput.add("Dessert: 5 per person");
+        expectedOutput.add("Cake: 10 per person");
+        expectedOutput.add("Light Snacks: 5 per person");
+        assertEquals(expectedOutput, testEvent.getFoodPrices());
     }
 }

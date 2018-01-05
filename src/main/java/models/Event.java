@@ -1,7 +1,9 @@
 package models;
 
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Event {
 
@@ -37,8 +39,12 @@ public class Event {
         return foodOptions;
     }
 
-    public String[] getFoodPrices() {
-        return foodOptions;
+    public Object getFoodPrices() {
+        List<String> foodWithPriceReturn = new ArrayList<>();
+        for (Integer i = 0; i < foodOptions.length; i++) {
+            foodWithPriceReturn.add(foodOptions[i] + ": " + foodPrices[i] + " per person");
+        }
+        return foodWithPriceReturn;
     }
 
     public String[] getDrinkOptions() {
