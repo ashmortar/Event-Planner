@@ -78,7 +78,7 @@ public class EventTest {
     @Test
     public void getDrinkOptions_returnsOptionsForDrinks_StringArray() throws Exception {
         Event testEvent = new Event();
-        String[] expectedOutput = {"Juice and Water", "Coffee and Tea", "Brunch Bar", "Beer and Wine", "Full Bar"};
+        String[] expectedOutput = {"Juice and Soda", "Coffee and Tea", "Brunch Bar", "Beer and Wine", "Full Bar"};
         assertArrayEquals(expectedOutput, testEvent.getDrinkOptions());
     }
 
@@ -108,5 +108,12 @@ public class EventTest {
         Event testEvent = new Event();
         Boolean expectedOutpu = false;
         assertEquals(expectedOutpu, testEvent.setEntertainment("yolo"));
+    }
+
+    @Test
+    public void getFoodPrices_returnsListOfFoodAndPriceOfFoodPerPerson_StringArray() throws Exception {
+        Event testEvent = new Event();
+        String[] expectedOutput = {"Brunch: 15 per person", "Lunch: 20 per person", "Dinner: 25 per person", "Dessert: 5 per person", "Cake: 10 per person", "Light Snacks: 5 per person"};
+        assertArrayEquals(expectedOutput, testEvent.getFoodPrices());
     }
 }

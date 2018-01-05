@@ -12,8 +12,11 @@ public class Event {
     private String drinks = "none";
     private String entertainment = "none";
     private String[] foodOptions = {"Brunch", "Lunch", "Dinner", "Dessert", "Cake", "Light Snacks"};
-    private String[] drinkOptions = {"Juice and Water", "Coffee and Tea", "Brunch Bar", "Beer and Wine", "Full Bar"};
+    private Integer[] foodPrices = {15, 20, 25, 5, 10, 5};
+    private String[] drinkOptions = {"Juice and Soda", "Coffee and Tea", "Brunch Bar", "Beer and Wine", "Full Bar"};
+    private Integer[] drinkPrices = {5, 5, 10, 10, 15};
     private String[] entertainmentOptions = {"Clown", "Magician", "Live Band", "DJ"};
+    private Integer[] entertainmentPrices = {50, 100, 300, 100};
 
     //getter methods-------------------------------------------------------------------------
     public Integer getNumberOfGuests() {
@@ -31,6 +34,10 @@ public class Event {
     }
 
     public String[] getFoodOptions() {
+        return foodOptions;
+    }
+
+    public String[] getFoodPrices() {
         return foodOptions;
     }
 
@@ -64,7 +71,11 @@ public class Event {
         }
     }
     public Object setEntertainment(String input) {
-        entertainment = input;
-        return entertainment;
+        if (Arrays.asList(entertainmentOptions).contains(input)) {
+            entertainment = input;
+            return entertainment;
+        } else {
+            return false;
+        }
     }
 }
