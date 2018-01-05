@@ -139,6 +139,12 @@ public class Event {
             }
         } else if (input.equals("30%Off")) {
             price = ((numberOfGuests * (foodPrices[foodIndex] + drinkPrices[drinkIndex]) + entertainmentPrices[entertainmentIndex]) * 7) / 10;
+        } else if (numberOfGuests.equals(75) && food.equals("Dinner") && drinks.equals("Beer and Wine") && entertainment.equals("DJ")) {
+            price = 2000;
+        } else if (numberOfGuests.equals(15) && food.equals("Cake") && drinks.equals("Juice and Soda") && entertainment.equals("Clown")) {
+            price = 200;
+        } else if (numberOfGuests.equals(100) && food.equals("Dinner") && drinks.equals("Full Bar") && entertainment.equals("Live Band")) {
+            price = 3800;
         } else
             price = numberOfGuests * (foodPrices[foodIndex] + drinkPrices[drinkIndex]) + entertainmentPrices[entertainmentIndex];
         return price;

@@ -62,6 +62,7 @@ public class App {
                     thisEvent.setEntertainment(userEntertainmentChoice);
                     System.out.println("Finally, if you have a coupon code enter it now, otherwise just press enter");
                     String userCouponCode = bufferedReader.readLine();
+
                     System.out.println("Ok, with the information you've chosen your event would cost: " + thisEvent.calculatePrice(userCouponCode));
                 }
                 else {
