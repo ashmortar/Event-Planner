@@ -149,4 +149,8 @@ public class Event {
             price = numberOfGuests * (foodPrices[foodIndex] + drinkPrices[drinkIndex]) + entertainmentPrices[entertainmentIndex];
         return price;
     }
+
+    public boolean checkValues() {
+        return true;
+    }
 }

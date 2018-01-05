@@ -150,12 +150,12 @@ public class EventTest {
     }
 
     @Test
-    public void calculatePrice_CorrectlyCalculatesPriceOfEventBasedOnChoices_4300() throws Exception {
+    public void calculatePrice_CorrectlyCalculatesPriceOfEventBasedOnChoices_3800() throws Exception {
         Event testEvent = new Event();
-        Integer expectedOutput = 4300;
+        Integer expectedOutput = 3800;
         testEvent.setNumberOfGuests(100);
         testEvent.setFood("Dinner");
-        testEvent.setDrinks("Full Bar");
+        testEvent.setDrinks("Beer and Wine");
         testEvent.setEntertainment("Live Band");
         assertEquals(expectedOutput, testEvent.calculatePrice("none"));
     }
@@ -206,5 +206,15 @@ public class EventTest {
         expectedOutput.add("Birthday Package INCLUDES: Cake, Juice and Soda plus our fabulous Clown for 15 people! COST: 200 SAVINGS: 75");
         expectedOutput.add("Reunion Package INCLUDES: Dinner, Full Bar and a Live Band for 100 people! COST: 3800 SAVINGS: 500!!");
         assertEquals(expectedOutput, testEvent.getPackages());
+    }
+
+    @Test
+    public void checkValues_returnsFalseIfAnyFieldsHaveBadValue_false() throws Exception {
+        Event testEvent = new Event();
+        testEvent.setNumberOfGuests(0);
+        testEvent.setFood("none");
+        testEvent.setDrinks("mudbath");
+        testEvent.setEntertainment("DJ");
+        assertEquals(false, testEvent.checkValues());
     }
 }
