@@ -104,7 +104,15 @@ public class Event {
 
     //Other Methods ------------------------------------------------------------------------------
 
-    public Integer calculatePrice() {
+    public Object calculatePrice(String input) {
+        int foodIndex = Arrays.asList(foodOptions).indexOf(food);
+        int drinkIndex = Arrays.asList(drinkOptions).indexOf(drinks);
+        int entertainmentIndex = Arrays.asList(entertainmentOptions).indexOf(entertainment);
+        if (numberOfGuests == 0) {
+            return false;
+        } else {
+            price = numberOfGuests * (foodPrices[foodIndex] + drinkPrices[drinkIndex]) + entertainmentPrices[entertainmentIndex];
+        }
         return price;
     }
 }

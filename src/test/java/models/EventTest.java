@@ -157,7 +157,17 @@ public class EventTest {
         testEvent.setFood("Dinner");
         testEvent.setDrinks("Full Bar");
         testEvent.setEntertainment("Live Band");
-        assertEquals(expectedOutput, testEvent.calculatePrice());
+        assertEquals(expectedOutput, testEvent.calculatePrice("none"));
+    }
 
+    @Test
+    public void couponCode_discountsCorrectlyForFreeDJ_4000() throws Exception {
+        Event testEvent = new Event();
+        Integer expectedOutput = 4000;
+        testEvent.setNumberOfGuests(100);
+        testEvent.setFood("Dinner");
+        testEvent.setDrinks("Full Bar");
+        testEvent.setEntertainment("DJ");
+        assertEquals(expectedOutput, testEvent.calculatePrice("DJSentMe"));
     }
 }
