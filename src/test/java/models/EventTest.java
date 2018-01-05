@@ -39,4 +39,13 @@ public class EventTest {
         String expectedOutput = "none";
         assertEquals(expectedOutput, testEvent.getEntertainment());
     }
+
+    @Test
+    public void setNumberOfGuests_changesNumberOfGuests_100() throws Exception {
+        Event testEvent = new Event();
+        Integer expectedOutput = 100;
+        testEvent.setNumberOfGuests(100);
+        assertEquals(expectedOutput, testEvent.getNumberOfGuests());
+
+    }
 }

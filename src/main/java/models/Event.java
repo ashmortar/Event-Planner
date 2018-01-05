@@ -5,6 +5,7 @@ public class Event {
     private Integer numberOfGuests = 0;
     private String food = "none";
     private String drinks = "none";
+    private String entertainment = "none";
 
         //getter methods
     public Integer getNumberOfGuests() {
@@ -17,7 +18,11 @@ public class Event {
         return drinks;
     }
     public String getEntertainment() {
-        return "failed test";
+        return entertainment;
     }
 
+    //setter methods
+    public Integer setNumberOfGuests(Integer input) {
+        return null;
+    }
 }
