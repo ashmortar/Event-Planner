@@ -23,6 +23,11 @@ public class Event {
 
     //setter methods
     public Integer setNumberOfGuests(Integer input) {
-        return null;
+        numberOfGuests = input;
+        return numberOfGuests;
+    }
+    public String setFood(String input) {
+        food = input;
+        return "failed test";
     }
 }
