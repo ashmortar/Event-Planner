@@ -217,4 +217,26 @@ public class EventTest {
         testEvent.setEntertainment("DJ");
         assertEquals(false, testEvent.checkValues());
     }
+
+    @Test
+    public void checkValues_returnsTrueIfAllFieldsHaveGoodValues_true() throws Exception {
+        Event testEvent = new Event();
+        testEvent.setEntertainment("Live Band");
+        testEvent.setFood("Cake");
+        testEvent.setDrinks("Coffee and Tea");
+        testEvent.setNumberOfGuests(100);
+        assertEquals(true, testEvent.checkValues());
+    }
+
+    @Test
+    public void clearValues_resetAllValuesToDefaults_0nonenonenone() {
+        Event testEvent = new Event();
+        Object expectedOutput = "0nonenonenone";
+        testEvent.setEntertainment("Live Band");
+        testEvent.setFood("Cake");
+        testEvent.setDrinks("Coffee and Tea");
+        testEvent.setNumberOfGuests(100);
+        assertEquals(expectedOutput, testEvent.clearValues());
+
+    }
 }

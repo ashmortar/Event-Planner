@@ -151,6 +151,35 @@ public class Event {
     }
 
     public boolean checkValues() {
-        return true;
+        boolean guestsTrue = false;
+        boolean foodTrue = false;
+        boolean drinksTrue = false;
+        boolean entertainmentTrue = false;
+
+        if (numberOfGuests > 0) {
+            guestsTrue = true;
+        }
+        if (Arrays.asList(foodOptions).contains(food)) {
+            foodTrue = true;
+        }
+        if (Arrays.asList(drinkOptions).contains(drinks)) {
+            drinksTrue = true;
+        }
+        if (Arrays.asList(entertainmentOptions).contains(entertainment)) {
+            entertainmentTrue = true;
+        }
+
+        if (guestsTrue && foodTrue && drinksTrue && entertainmentTrue) {
+            return true;
+        } else
+            return false;
+    }
+
+    public Object clearValues() {
+        numberOfGuests = 0;
+        food = "none";
+        drinks = "none";
+        entertainment = "none";
+        return numberOfGuests + food + drinks + entertainment;
     }
 }

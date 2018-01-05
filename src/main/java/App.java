@@ -62,8 +62,13 @@ public class App {
                     thisEvent.setEntertainment(userEntertainmentChoice);
                     System.out.println("Finally, if you have a coupon code enter it now, otherwise just press enter");
                     String userCouponCode = bufferedReader.readLine();
-
-                    System.out.println("Ok, with the information you've chosen your event would cost: " + thisEvent.calculatePrice(userCouponCode));
+                    if (thisEvent.checkValues()) {
+                        System.out.println("Ok, with the information you've chosen your event would cost: " + thisEvent.calculatePrice(userCouponCode));
+                        thisEvent.clearValues();
+                    } else {
+                        System.out.println("Sorry, one of your selections was invalid, please try again");
+                        thisEvent.clearValues();
+                    }
                 }
                 else {
                     System.out.println("Sorry, that wasn't a valid input");
