@@ -67,4 +67,11 @@ public class EventTest {
         String expectedOutput = "Live Band";
         assertEquals(expectedOutput, testEvent.setEntertainment("Live Band"));
     }
+
+    @Test
+    public void getFoodOptions_returnsOptionsForFood_StringArray() throws Exception {
+        Event testEvent = new Event();
+        String[] expectedOutput = {"Brunch", "Lunch", "Dinner", "Dessert", "Cake", "Light Snacks"};
+        assertEquals(expectedOutput, testEvent.getFoodOpions());
+    }
 }
