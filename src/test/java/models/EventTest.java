@@ -148,4 +148,16 @@ public class EventTest {
         expectedOutput.add("DJ: 100");
         assertEquals(expectedOutput, testEvent.getEntertainmentPrices());
     }
+
+    @Test
+    public void calculatePrice_CorrectlyCalculatesPriceOfEventBasedOnChoices_4300() throws Exception {
+        Event testEvent = new Event();
+        Integer expectedOutput = 4300;
+        testEvent.setNumberOfGuests(100);
+        testEvent.setFood("Dinner");
+        testEvent.setDrinks("Full Bar");
+        testEvent.setEntertainment("Live Band");
+        assertEquals(expectedOutput, testEvent.calculatePrice());
+
+    }
 }

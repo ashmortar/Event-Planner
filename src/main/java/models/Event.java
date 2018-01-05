@@ -8,7 +8,7 @@ import java.util.List;
 public class Event {
 
 
-        //properties-----------------------------------------------------------------------------
+    //properties-----------------------------------------------------------------------------
     private Integer numberOfGuests = 0;
     private String food = "none";
     private String drinks = "none";
@@ -19,6 +19,7 @@ public class Event {
     private Integer[] drinkPrices = {5, 5, 10, 10, 15};
     private String[] entertainmentOptions = {"Clown", "Magician", "Live Band", "DJ"};
     private Integer[] entertainmentPrices = {50, 100, 300, 100};
+    private Integer price = 0;
 
     //getter methods-------------------------------------------------------------------------
     public Integer getNumberOfGuests() {
@@ -40,7 +41,7 @@ public class Event {
     }
 
     public Object getFoodPrices() {
-        List<String> foodWithPriceReturn = new ArrayList<>();
+        List<String> foodWithPriceReturn = new ArrayList<String>();
         for (Integer i = 0; i < foodOptions.length; i++) {
             foodWithPriceReturn.add(foodOptions[i] + ": " + foodPrices[i] + " per person");
         }
@@ -52,7 +53,7 @@ public class Event {
     }
 
     public Object getDrinkPrices() {
-        List<String> drinkWithPriceReturn = new ArrayList<>();
+        List<String> drinkWithPriceReturn = new ArrayList<String>();
         for (Integer i = 0; i < drinkOptions.length; i++) {
             drinkWithPriceReturn.add(drinkOptions[i] + ": " + drinkPrices[i] + " per person");
         }
@@ -64,7 +65,11 @@ public class Event {
     }
 
     public Object getEntertainmentPrices() {
-        return false;
+        List<String> entertainmentWithPriceReturn = new ArrayList<String>();
+        for (Integer i = 0; i < entertainmentOptions.length; i++) {
+            entertainmentWithPriceReturn.add(entertainmentOptions[i] + ": " + entertainmentPrices[i]);
+        }
+        return entertainmentWithPriceReturn;
     }
 
     //setter methods------------------------------------------------------------------------------
@@ -95,5 +100,11 @@ public class Event {
         } else {
             return false;
         }
+    }
+
+    //Other Methods ------------------------------------------------------------------------------
+
+    public Integer calculatePrice() {
+        return price;
     }
 }
