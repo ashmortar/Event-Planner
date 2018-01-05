@@ -60,4 +60,11 @@ public class EventTest {
         String expectedOutput = "Full Bar";
         assertEquals(expectedOutput, testEvent.setDrinks("Full Bar"));
     }
+
+    @Test
+    public void setEntertainment_changesEntertainment_LiveBand() throws Exception {
+        Event testEvent = new Event();
+        String expectedOutput = "Live Band";
+        assertEquals(expectedOutput, testEvent.setEntertainment("Live Band"));
+    }
 }

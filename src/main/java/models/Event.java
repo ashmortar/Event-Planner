@@ -32,6 +32,10 @@ public class Event {
     }
     public String setDrinks(String input) {
         drinks = input;
+        return drinks;
+    }
+    public String setEntertainment(String input) {
+        entertainment = input;
         return "failed test";
     }
 }
