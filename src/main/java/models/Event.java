@@ -8,7 +8,9 @@ public class Event {
     private String food = "none";
     private String drinks = "none";
     private String entertainment = "none";
-    private String[] foodOpions = {"Brunch", "Lunch", "Dinner", "Dessert", "Cake", "Light Snacks"};
+    private String[] foodOptions = {"Brunch", "Lunch", "Dinner", "Dessert", "Cake", "Light Snacks"};
+    private String[] drinkOptions = {"Juice and Water", "Coffee and Tea", "Brunch Bar", "Beer and Wine", "Full Bar"};
+    private String[] entertainmentOptions = {"Clown", "Magician", "Live Band", "DJ"};
 
     //getter methods-------------------------------------------------------------------------
     public Integer getNumberOfGuests() {
@@ -25,9 +27,16 @@ public class Event {
         return entertainment;
     }
 
-    public String[] getFoodOpions() {
-        String[] output = {"something", "something else"};
-        return output;
+    public String[] getFoodOptions() {
+        return foodOptions;
+    }
+
+    public String[] getDrinkOptions() {
+        return drinkOptions;
+    }
+
+    public String[] getEntertainmentOptions() {
+        return drinkOptions;
     }
 
     //setter methods------------------------------------------------------------------------------

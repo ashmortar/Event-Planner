@@ -72,6 +72,20 @@ public class EventTest {
     public void getFoodOptions_returnsOptionsForFood_StringArray() throws Exception {
         Event testEvent = new Event();
         String[] expectedOutput = {"Brunch", "Lunch", "Dinner", "Dessert", "Cake", "Light Snacks"};
-        assertEquals(expectedOutput, testEvent.getFoodOpions());
+        assertArrayEquals(expectedOutput, testEvent.getFoodOptions());
+    }
+
+    @Test
+    public void getDrinkOptions_returnsOptionsForDrinks_StringArray() throws Exception {
+        Event testEvent = new Event();
+        String[] expectedOutput = {"Juice and Water", "Coffee and Tea", "Brunch Bar", "Beer and Wine", "Full Bar"};
+        assertArrayEquals(expectedOutput, testEvent.getDrinkOptions());
+    }
+
+    @Test
+    public void getEntertainmentOptions_returnsOptionsForEnterTainment_StringArray() throws Exception {
+        Event testEvent = new Event();
+        String[] expectedOutput = {"Clown", "Magician", "Live Band", "DJ"};
+        assertArrayEquals(expectedOutput, testEvent.getEntertainmentOptions());
     }
 }
