@@ -18,4 +18,11 @@ public class EventTest {
         Integer expectedOutput = 0;
         assertEquals(expectedOutput, testEvent.getNumberOfGuests());
     }
+
+    @Test
+    public void getFood_returnsStringPropertyOfEvent_None() throws Exception {
+        Event testEvent = new Event();
+        String expectedOutput = "none";
+        assertEquals(expectedOutput, testEvent.getFood());
+    }
 }
